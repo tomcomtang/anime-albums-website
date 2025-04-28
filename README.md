@@ -40,8 +40,8 @@ This project is intended for **private deployment only**. For commercial use, pl
 
 1. Clone the project
 ```bash
-git clone https://github.com/your-username/anime-blog-template.git
-cd anime-blog-template
+git clone https://github.com/TencentEdgeOne/pages-templates/examples/anime-blog-demo1.git
+cd anime-blog-demo1
 ```
 
 2. Install dependencies
@@ -69,11 +69,6 @@ Create Markdown files in the `source/_posts` directory using the following forma
 ---
 title: Post Title
 date: 2024-03-21 12:00:00
-tags:
-  - tag1
-  - tag2
-categories:
-  - category1
 ---
 
 Post content...
@@ -114,8 +109,6 @@ menu:
     path: /
   - name: Archives
     path: /archives
-  - name: Tags
-    path: /tags
   - name: About
     path: /about
 ```
