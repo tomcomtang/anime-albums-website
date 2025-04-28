@@ -110,12 +110,6 @@ The website uses JSON configuration files in the `public/data` directory for ani
 2. Running the `fetch-anilist-data.js` script with different parameters
 3. Creating your own JSON files following the same structure
 
-### Live2D Character
-
-The Live2D character configuration can be found in:
-- `components/live2d/live2d-wrapper.tsx`
-- `public/waifu-tips.json`
-
 ### Weather Effects
 
 Weather effects can be customized in:
@@ -140,32 +134,6 @@ Weather effects can be customized in:
 └── scripts/             # Utility scripts
     └── fetch-anilist-data.js  # Data fetching script
 ```
-
-## Deployment
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new).
-
-Check out the [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-
-## Commercial Use
-
-Before using this template for commercial purposes, please be aware of the following:
-
-1. **AniList API Usage**:
-   - The AniList API is free to use but has rate limits
-   - For commercial use, review the [AniList API Terms of Service](https://anilist.gitbook.io/anilist-apiv2-docs/overview/rate-limiting)
-   - Consider implementing proper caching and rate limiting in your application
-
-2. **Live2D Usage**:
-   - Live2D models and technology are subject to their own licensing terms
-   - For commercial use, you must comply with [Live2D's licensing terms](https://www.live2d.com/en/terms/)
-   - You may need to obtain appropriate licenses for the Live2D models you use
-   - Consider using your own Live2D models or obtaining proper commercial licenses
-
-3. **Content Rights**:
-   - Ensure you have the right to use any anime images, videos, or other content
-   - Respect copyright holders' rights and obtain necessary permissions
-   - Consider using only content you have the rights to use commercially
 
 ## License
 
