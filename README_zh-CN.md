@@ -4,7 +4,7 @@
 
 ## 快速部署
 
-[![部署到 EdgeOne](https://cdnstatic.tencentcs.com/edgeone/pages/deploy.svg)](https://edgeone.ai/pages/new?template=anime-blog-demo1)
+[![部署到 EdgeOne](https://cdnstatic.tencentcs.com/edgeone/pages/deploy.svg)](https://console.cloud.tencent.com/edgeone/pages/new?template=anime-blog-demo1)
 
 [更多模板](https://edgeone.ai/pages/templates)
 
