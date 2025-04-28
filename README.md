@@ -2,9 +2,9 @@
 
 A modern, responsive anime album collection website template built with Next.js. This template provides a beautiful and interactive way to showcase your anime collection with features like video backgrounds, weather effects, and Live2D character interactions.
 
-## Quick Deploy
+## Deploy
 
-[![Deploy to EdgeOne](https://cdnstatic.tencentcs.com/edgeone/pages/deploy.svg)](https://edgeone.ai/pages/new?template=anime-blog-demo1)
+[![Deploy to EdgeOne](https://cdnstatic.tencentcs.com/edgeone/pages/deploy.svg)](https://edgeone.ai/pages/new?template=https://github.com/tomcomtang/anime-albums-website&output-directory=./out&build-command=npm%20run%20build)
 
 [More Templates](https://edgeone.ai/pages/templates)
 
@@ -47,7 +47,7 @@ You can quickly deploy this template to EdgeOne with just one click. The deploym
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/TencentEdgeOne/pages-templates/examples/anime-albums-website.git
+git clone https://github.com/tomcomtang/anime-albums-website.git
 cd anime-albums-website
 ```
 
