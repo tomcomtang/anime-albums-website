@@ -1,0 +1,32 @@
+[
+  {
+    "id": "video5",
+    "title": "Anime Background 5",
+    "videoPath": "/video-5.mp4",
+    "thumbnailPath": ""
+  },
+  {
+    "id": "video1",
+    "title": "Anime Background 1",
+    "videoPath": "/video-1.mp4",
+    "thumbnailPath": ""
+  },
+  {
+    "id": "video2",
+    "title": "Anime Background 2",
+    "videoPath": "/video-2.mp4",
+    "thumbnailPath": ""
+  },
+  {
+    "id": "video3",
+    "title": "Anime Background 3",
+    "videoPath": "/video-3.mp4",
+    "thumbnailPath": ""
+  },
+  {
+    "id": "video4",
+    "title": "Anime Background 4",
+    "videoPath": "/video-4.mp4",
+    "thumbnailPath": ""
+  }
+]
