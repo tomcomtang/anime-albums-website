@@ -30,7 +30,7 @@ export default function CategoryGalleryClient() {
   const router = useRouter()
   const [animeList, setAnimeList] = useState<AnimeItem[]>([])
   const [loading, setLoading] = useState(true)
-  const [selectedImage, setSelectedImage] = useState<string | null>(null)
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null)
   const [backgroundImage, setBackgroundImage] = useState("")
   const category = params.category as string
   const { t } = useLanguage()
@@ -61,12 +61,26 @@ export default function CategoryGalleryClient() {
     loadCategoryData()
   }, [category])
 
-  const handleImageClick = (imageUrl: string) => {
-    setSelectedImage(imageUrl)
+  const handleImageClick = (index: number) => {
+    setSelectedIndex(index)
   }
 
   const closeModal = () => {
-    setSelectedImage(null)
+    setSelectedIndex(null)
+  }
+
+  const showPrev = (e: React.MouseEvent) => {
+    e.stopPropagation()
+    if (selectedIndex !== null && animeList.length > 0) {
+      setSelectedIndex((selectedIndex - 1 + animeList.length) % animeList.length)
+    }
+  }
+
+  const showNext = (e: React.MouseEvent) => {
+    e.stopPropagation()
+    if (selectedIndex !== null && animeList.length > 0) {
+      setSelectedIndex((selectedIndex + 1) % animeList.length)
+    }
   }
 
   if (loading) {
@@ -100,14 +114,14 @@ export default function CategoryGalleryClient() {
         </div>
 
         <div className="gallery-grid">
-          {animeList.map((anime) => (
+          {animeList.map((anime, idx) => (
             <div key={anime.id} className="gallery-item">
               <Image
                 src={anime.coverImage.extraLarge || anime.bannerImage || "/placeholder.svg?height=400&width=300"}
                 alt={anime.title.romaji || anime.title.english || "Anime Cover"}
                 width={300}
                 height={400}
-                onClick={() => handleImageClick(anime.coverImage.extraLarge || anime.bannerImage)}
+                onClick={() => handleImageClick(idx)}
               />
               <div className="gallery-item-info">
                 <h3>{anime.title.romaji || anime.title.english}</h3>
@@ -117,17 +131,62 @@ export default function CategoryGalleryClient() {
         </div>
 
         {/* Fullscreen Image Modal */}
-        <div className={`fullscreen-modal ${selectedImage ? "active" : ""}`} onClick={closeModal}>
-          {selectedImage && (
+        <div className={`fullscreen-modal ${selectedIndex !== null ? "active" : ""}`} onClick={closeModal}>
+          {selectedIndex !== null && (
             <>
-              <Image
-                src={selectedImage || "/placeholder.svg"}
+              <button
+                className="fullscreen-nav prev"
+                style={{
+                  position: "absolute",
+                  left: "2vw",
+                  top: "50%",
+                  transform: "translateY(-50%)",
+                  zIndex: 1010,
+                  background: "rgba(0,0,0,0.5)",
+                  color: "white",
+                  border: "none",
+                  fontSize: "2rem",
+                  borderRadius: "50%",
+                  cursor: "pointer",
+                  padding: "0.5em 1em"
+                }}
+                onClick={showPrev}
+                aria-label="Previous image"
+              >
+                ←
+              </button>
+              <img
+                src={
+                  animeList[selectedIndex]?.coverImage.extraLarge ||
+                  animeList[selectedIndex]?.bannerImage ||
+                  "/placeholder.svg"
+                }
                 alt="Full size image"
-                width={1200}
-                height={800}
                 className="fullscreen-image"
-                onClick={(e) => e.stopPropagation()}
+                onClick={e => e.stopPropagation()}
+                style={{ maxWidth: "90vw", maxHeight: "90vh", width: "auto", height: "auto" }}
               />
+              <button
+                className="fullscreen-nav next"
+                style={{
+                  position: "absolute",
+                  right: "2vw",
+                  top: "50%",
+                  transform: "translateY(-50%)",
+                  zIndex: 1010,
+                  background: "rgba(0,0,0,0.5)",
+                  color: "white",
+                  border: "none",
+                  fontSize: "2rem",
+                  borderRadius: "50%",
+                  cursor: "pointer",
+                  padding: "0.5em 1em"
+                }}
+                onClick={showNext}
+                aria-label="Next image"
+              >
+                →
+              </button>
               <div className="close-modal" onClick={closeModal}>
                 <X />
               </div>
